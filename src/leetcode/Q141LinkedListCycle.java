@@ -2,6 +2,7 @@ package leetcode;
 
 import java.util.HashSet;
 import java.util.Set;
+import leetcode.auxiliary.AssertUtil;
 import leetcode.auxiliary.ListNode;
 
 /**
@@ -48,19 +49,22 @@ public final class Q141LinkedListCycle {
   }
 
   public static void main(String[] args) {
+    // 案例1
     ListNode head1 = new ListNode(3, new ListNode(2, new ListNode(0, new ListNode(-4))));
     head1.next.next.next.next = head1.next;
     boolean result1 = hasCycle(head1);
     System.out.println(result1);
-    assert result1;
+    AssertUtil.assertTrue(result1);
+    // 案例2
     ListNode head2 = new ListNode(1, new ListNode(2));
     head2.next.next = head2;
     boolean result2 = hasCycle(head2);
     System.out.println(result2);
-    assert result2;
+    AssertUtil.assertTrue(result2);
+    // 案例3
     ListNode head3 = new ListNode(1);
     boolean result3 = hasCycle(head3);
     System.out.println(result3);
-    assert !result3;
+    AssertUtil.assertTrue(!result3);
   }
 }

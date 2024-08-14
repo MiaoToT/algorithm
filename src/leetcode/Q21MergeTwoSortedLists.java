@@ -1,5 +1,7 @@
 package leetcode;
 
+import java.util.Objects;
+import leetcode.auxiliary.AssertUtil;
 import leetcode.auxiliary.ListNode;
 
 /**
@@ -52,17 +54,20 @@ public final class Q21MergeTwoSortedLists {
   }
 
   public static void main(String[] args) {
+    // 案例1
     ListNode result1 =
         mergeTwoLists(
             new ListNode(1, new ListNode(2, new ListNode(4))),
             new ListNode(1, new ListNode(3, new ListNode(4))));
     System.out.println(result1);
-    assert result1.toString().equals("[1,1,2,3,4,4]");
+    AssertUtil.assertTrue("[1,1,2,3,4,4]".equals(Objects.toString(result1)));
+    // 案例2
     ListNode result2 = mergeTwoLists(null, null);
     System.out.println(result2 == null ? "[]" : result2.toString());
-    assert result2 == null;
+    AssertUtil.assertTrue(result2 == null);
+    // 案例3
     ListNode result3 = mergeTwoLists(null, new ListNode(0));
     System.out.println(result3);
-    assert result3.toString().equals("[0]");
+    AssertUtil.assertTrue("[0]".equals(Objects.toString(result3)));
   }
 }

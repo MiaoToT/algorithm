@@ -1,5 +1,7 @@
 package leetcode;
 
+import leetcode.auxiliary.AssertUtil;
+
 import java.text.MessageFormat;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -51,18 +53,18 @@ public final class Q1TwoSum {
     int target2 = 6;
     int[] result2 = twoSum(nums2, target2);
     String resultStr2 = Arrays.toString(result2);
-    assert resultStr2.equals("[1, 2]");
     System.out.println(
         MessageFormat.format(
             "nums:{0}, target:{1}, result:{2}", Arrays.toString(nums2), target2, resultStr2));
+    AssertUtil.assertTrue("[1, 2]".equals(resultStr2));
     // 案例3
     int[] nums3 = new int[] {3, 3};
     int target3 = 6;
     int[] result3 = twoSum(nums3, target3);
     String resultStr3 = Arrays.toString(result3);
-    assert resultStr3.equals("[0, 1]");
     System.out.println(
         MessageFormat.format(
             "nums:{0}, target:{1}, result:{2}", Arrays.toString(nums3), target3, resultStr3));
+    AssertUtil.assertTrue("[0, 1]".equals(resultStr3));
   }
 }

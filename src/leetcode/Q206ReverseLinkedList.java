@@ -1,5 +1,7 @@
 package leetcode;
 
+import java.util.Objects;
+import leetcode.auxiliary.AssertUtil;
 import leetcode.auxiliary.ListNode;
 
 /**
@@ -47,14 +49,16 @@ public final class Q206ReverseLinkedList {
   }
 
   public static void main(String[] args) {
+    // 案例1
     ListNode head1 =
         new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
     ListNode result1 = reverseList(head1);
     System.out.println(result1);
-    assert result1.toString().equals("[5,4,3,2,1]");
+    AssertUtil.assertTrue("[5,4,3,2,1]".equals(Objects.toString(result1)));
+    // 案例2
     ListNode head2 = new ListNode(1, new ListNode(2));
     ListNode result2 = reverseList(head2);
     System.out.println(result2);
-    assert result2.toString().equals("[2,1]");
+    AssertUtil.assertTrue("[2,1]".equals(Objects.toString(result2)));
   }
 }
